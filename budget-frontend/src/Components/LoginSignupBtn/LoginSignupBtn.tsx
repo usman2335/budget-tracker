@@ -3,10 +3,11 @@ import "./LoginSignupBtn.css"
 
 interface ChildProps {
   children: React.ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
-const LoginSignupBtn = ({children} : ChildProps) => {
+const LoginSignupBtn = ({children, onClick} : ChildProps) => {
   return (
-        <Button type = "default" className="button">{children}</Button>
+        <Button type = "default" className="button" onClick = {onClick}>{children}</Button>
   )
 }
 

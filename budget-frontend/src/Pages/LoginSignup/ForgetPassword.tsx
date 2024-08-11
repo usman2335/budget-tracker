@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Divider, Typography } from "@mui/material";
-import logo from "../Components/assets/logo.svg";
-import forgetHero from "../Components/assets/forgetHero.svg"
-import "./CSS/ForgetPassword.css";
+import logo from "../../Components/assets/logo.svg";
+import forgetHero from "../../Components/assets/forgetHero.svg"
+import "../CSS/ForgetPassword.css";
 import { Flex, Input } from "antd";
 import { MailOutlined } from "@ant-design/icons";
-import LoginSignupBtn from "../Components/LoginSignupBtn/LoginSignupBtn";
+import LoginSignupBtn from "../../Components/LoginSignupBtn/LoginSignupBtn";
+
 import { Link } from 'react-router-dom';
 
 
