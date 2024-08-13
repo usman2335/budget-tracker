@@ -7,10 +7,14 @@ import "../CSS/LoginSignup.css";
 import { Checkbox, Flex, Input, notification } from "antd";
 import { MailOutlined, UserOutlined } from "@ant-design/icons";
 import LoginSignupBtn from "../../Components/LoginSignupBtn/LoginSignupBtn";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { validateLogin, validateSignup } from "./validation";
 
+
+
+
 const LoginSignup = () => {
+  const navigate = useNavigate();
   const [loginState, setLoginState] = useState(true); // State to toggle between login and signup
   const [loginFormData, setLoginFormData] = useState({
     email: "",
@@ -75,7 +79,9 @@ const LoginSignup = () => {
         localStorage.setItem('auth-token',responseData.token);
         notification.success({
           message: "Login Successful",
-          description: "You have been logged in."
+          description: "You have been logged in.",
+          duration: 2,
+          onClose: () => navigate('/homepage')
         });
       } else {
         notification.error({

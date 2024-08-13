@@ -35,18 +35,19 @@
   margin-top: 5%;
 }
 .input {
-  height: 48px;
+  /* height: 48px;
   background-color: #EFF4FB;
   border-color: #DDE4F0;
   color: black;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  /* margin-top: 10px; */
+  /* margin-bottom: 10px; */
 
   border-radius: 4px;
 }
 .error{
   border-color: red !important;
   background-color:black;
+  
 }
 .input:hover {
   background-color: white;
@@ -109,4 +110,5 @@
 .error-message{
   color: red;
   font-size: 0.9rem;
+  margin-left: 2px;
 }
