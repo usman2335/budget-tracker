@@ -10,6 +10,8 @@ import Homepage from "./Pages/Homepage/Homepage";
 import ExpensesPage from "./Pages/Homepage/ExpensesPage";
 import AnalysisPage from "./Pages/Homepage/AnalysisPage";
 import { ConfigProvider } from "antd";
+import UsersPage from "./Pages/Homepage/UsersPage";
+import UserProfilePage from "./Pages/Homepage/UserProfilePage";
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
           <Route path="/homepage" element={<Homepage />}>
             <Route path="analysis" element={<AnalysisPage />} />
             <Route path="expenses" element={<ExpensesPage />} />
+            <Route path="users" element={<UsersPage />} />
           </Route>
+          <Route path="/profile" element={<UserProfilePage />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/sign-up" element={<LoginSignup />} />
           <Route path="/login" element={<LoginSignup />} />

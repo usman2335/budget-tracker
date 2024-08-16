@@ -2,13 +2,12 @@ import { Avatar, Popover } from "antd";
 import { ReactNode } from "react";
 import "./PopoverProfile.css"
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
-import { Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
-const text = <span>Title</span>;
 
 const content = (
   <>    
-  <div className = "container">
+  <div className = "container-popover">
     <Avatar className = "avatar-popover"></Avatar>
     <div className = "email-container">
       <span> <strong>Ali Hassan</strong></span>
@@ -16,8 +15,8 @@ const content = (
     </div>
   </div>
   <div>
-    <p className = "text"><UserOutlined></UserOutlined>Profile</p>
-    <p className = "text"><LogoutOutlined></LogoutOutlined>Logout</p>
+  <Link to = "/profile" className="text"><p className = "text"><UserOutlined ></UserOutlined>Profile</p></Link>
+    <Link to = "/login" ><p className = "text"><LogoutOutlined></LogoutOutlined>Logout</p></Link>
   </div>
   </>
 );

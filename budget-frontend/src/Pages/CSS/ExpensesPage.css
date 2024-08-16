@@ -79,7 +79,7 @@
     display: flex;
     align-items: center;
     color: #667085;
-    background-color: white;
+    /* background-color: white; */
 }
 .css-dev-only-do-not-override-bpb6ui .ant-table-wrapper .ant-table-footer {
     background-color: white;

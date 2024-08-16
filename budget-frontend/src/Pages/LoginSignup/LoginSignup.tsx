@@ -27,6 +27,7 @@ const LoginSignup = () => {
     password: "",
     confirmPassword: "",
     budget: "",
+    role: "user"
   });
 
   const [loginErrors, setLoginErrors] = useState({
@@ -239,7 +240,7 @@ const LoginSignup = () => {
                       className= {signupErrors.lastName ? "input signup-input error" : "input signup-input"}
 
                     />
-                    {/* {signupErrors.lastName && <div className="error-message">{signupErrors.lastName}</div>} */}
+                    {signupErrors.lastName && <div className="error-message">{signupErrors.lastName}</div>}
                   </div>
                 </Flex>
                 <Typography variant="subtitle2">Email</Typography>
@@ -253,7 +254,7 @@ const LoginSignup = () => {
                   className= {signupErrors.email ? "input signup-input error" : "input signup-input"}
 
                 />
-                {/* {signupErrors.email && <div className="error-message">{signupErrors.email}</div>} */}
+                {signupErrors.email && <div className="error-message">{signupErrors.email}</div>}
 
                 <Typography variant="subtitle2">Password</Typography>
                 <Input.Password

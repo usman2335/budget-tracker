@@ -7,13 +7,15 @@ const app = express();
 const port = 4000;
 
 const userRoutes = require('./Routes/userRoutes');
+const expensesRoutes = require('./Routes/expensesRoutes');
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors()); 
 
 // Routes
 app.use('/', userRoutes);
+app.use('/', expensesRoutes);
 //DB connection
 
 mongoose.connect("mongodb+srv://usman2335:budgetdb@cluster0.3nmo5.mongodb.net/budget-tracker");

@@ -1,11 +1,5 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-  Navigate,
-} from "react-router-dom";
-import { Avatar, Button, Dropdown, Layout, Menu, Popover } from "antd";
+import { Link } from "react-router-dom";
+import { Avatar, Button, Layout, Menu } from "antd";
 import { Content, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import { ReactNode, useState } from "react";
@@ -20,15 +14,13 @@ import "./MainLayout.css";
 import { UserOutlined } from "@ant-design/icons";
 import PopoverProfile from "../Popover/PopoverProfile";
 
-
-
-
 interface MainLayoutProps {
   children: ReactNode;
 }
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   const [collapsed, setCollapsed] = useState(false);
+  const [userType, setUserType] = useState("admin");
   return (
     <Layout className="main-layout">
       <Sider
@@ -49,7 +41,14 @@ const MainLayout = ({ children }: MainLayoutProps) => {
           <Menu.Item key="2" icon={<AttachMoneyIcon />}>
             <Link to="/homepage/expenses">Expenses</Link>
           </Menu.Item>
-          <Menu.Item key="3" icon={<ExitToAppIcon />}>
+          {userType === "admin" ? (
+            <Menu.Item key="3" icon={<UserOutlined />}>
+              <Link to="/homepage/users">Users</Link>
+            </Menu.Item>
+          ) : (
+            ""
+          )}
+          <Menu.Item key="4" icon={<ExitToAppIcon />}>
             <Link to="/login">Logout</Link>
           </Menu.Item>
         </Menu>
@@ -77,7 +76,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
             <PopoverProfile>
               <Avatar size={48} icon={<UserOutlined />} className="avatar" />
-              </PopoverProfile>
+            </PopoverProfile>
           </div>
         </Header>
         <Content className="content">{children}</Content>
